@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="cursor"></div>
+
+    <h1>CURSOR</h1>
+
+    <script>
+
+        const cursor = document.getElementById('cursor');
+
+        // get the dimensions of the cursor
+        let cursorWidth = cursor.offsetWidth;
+        let cursorHeight = cursor.offsetHeight;
+
+        let settings = {
+            mouseX: 0,
+            mouseY: 0,
+            xPos: 0,
+            yPos: 0,
+            speed: 15 // speed factor
+        };
+
+        function animate() {
+            settings.xPos += (settings.mouseX - settings.xPos) / settings.speed;
+            settings.yPos += (settings.mouseY - settings.yPos) / settings.speed;
+
+            // use transform to change the position and center the cursor
+            cursor.style.transform = `translate(${settings.xPos - cursorWidth / 2}px, ${settings.yPos - cursorHeight / 2}px)`;
+
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        document.addEventListener('mousemove', function(e) {
+            settings.mouseX = e.pageX;
+            settings.mouseY = e.pageY;
+        });
+
+
+
+    </script>
+</body>
+</html>

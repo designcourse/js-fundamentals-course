@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <h1>spicy.</h1>
+
+    <div class="cursor">
+        <p>so hot.</p>
+    </div>
+
+    <script>
+        const headline = document.querySelector('h1')
+        const cursor = document.querySelector('.cursor')
+
+        let cursorWidth = cursor.offsetWidth;
+        let cursorHeight = cursor.offsetHeight;
+
+        let settings = {
+            mouseX: 0,
+            mouseY: 0,
+            xPos: 0,
+            yPos: 0,
+            moving: false,
+            speed: 15 // speed factor
+        };
+
+        headline.addEventListener('mousemove', function(e) {
+            settings.mouseX = e.pageX;
+            settings.mouseY = e.pageY;
+            settings.moving = true
+        });
+
+        headline.addEventListener('mouseleave', e => {
+            cursor.style.transform = 'scale(0)'
+            settings.moving = false
+        })
+
+
+        function animate() {
+            settings.xPos += (settings.mouseX - settings.xPos) / settings.speed;
+            settings.yPos += (settings.mouseY - settings.yPos) / settings.speed;
+
+            if (settings.moving) {
+                cursor.style.transform = 
+                    `scale(1) translate(${settings.xPos - cursorWidth / 2}px, ${settings.yPos - cursorHeight / 2}px)`;
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate()
+
+
+    </script>
+</body>
+</html>

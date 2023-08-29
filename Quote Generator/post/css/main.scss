@@ -1,0 +1,70 @@
+body {
+    background: #E0E0E0;
+    padding: 0 5vw;
+    font-family: 'Poppins';
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.container {
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeIn 1s forwards;
+    animation-delay: .5s;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: clamp(2rem, 5vw, 7rem);
+    position: relative;
+
+    &:before {
+        content: '"';
+        position: absolute;
+        font-size: 30rem;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        opacity: 0.1;
+        top: -.3em;
+        left: -.2em;
+        z-index: -1;
+    }
+}
+
+button {
+    display: flex;
+    gap: 1em;
+    border: none;
+    background: none;
+    align-items: center;
+    cursor: pointer;
+
+    * {
+        flex: 1;
+    }
+
+    span {
+        white-space: nowrap;
+        font-size: clamp(1.2rem, 1.5vw, 4rem);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &:hover svg {
+        transform: translateX(10px);
+    }
+
+    svg {
+        width: 20px;
+        transition: transform .3s;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

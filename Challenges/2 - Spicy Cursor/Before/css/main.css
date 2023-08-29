@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  display: grid;
+  place-content: center;
+  background: #212224;
+  color: white;
+}
+
+h1 {
+  font-size: clamp(5rem, 10vw, 15rem);
+  letter-spacing: -0.6rem;
+  cursor: pointer;
+}
+h1:hover .cursor {
+  transform: scale(1);
+}
+
+.cursor {
+  position: fixed;
+  pointer-events: none;
+  background: #E34400;
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  display: grid;
+  place-content: center;
+  font-weight: bold;
+  transform: scale(0);
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,39 @@
+:root {
+  --background-color: #232323;
+  --text-color: white;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  transition: background-color 0.3s;
+  font-family: "Roboto";
+}
+
+.container {
+  display: flex;
+  gap: 1em;
+}
+.container .switch {
+  width: 75px;
+  background: #2F2F2F;
+  border-radius: 5em;
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  cursor: pointer;
+}
+.container .switch .handle {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: white;
+  transition: transform 0.3s;
+}
+
+.move-right {
+  transform: translateX(45px);
+}/*# sourceMappingURL=main.css.map */

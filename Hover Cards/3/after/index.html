@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="btn-container">
+            <a href="#" class="cta">Imagine the difference</a>
+        </div>
+
+        <ul>
+            <li id="card1">
+                <strong>stoked</strong>
+                <p>Use stoked to amplify your design systems and add an actual level of spark.</p>
+            </li>
+            <li id="card2">
+                <strong>precision</strong>
+                <p>The precision of our components lends itself to the most accurate design system.</p>
+            </li>
+            <li id="card3">
+                <strong>static</strong>
+                <p>Not only do you own dynamic components, but static as well.</p>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+
+        const cta = document.querySelector('.cta')
+        const cards = document.querySelectorAll('li')
+        let startTime = 0
+        let timeOffset = 100
+
+
+        function animateCard(enterOrLeave) {
+            cards.forEach(card => {
+                card.style.transitionDelay = startTime + 'ms'
+
+                if(enterOrLeave === 'enter')
+                    card.style.transform = 'translateY(0)'
+                else
+                    card.style.transform = 'translateY(-100%)'
+                    
+                startTime += timeOffset
+                if (startTime >= 300)
+                    startTime = 0
+            })
+        }
+
+        cta.addEventListener('mouseenter', () => animateCard('enter'))
+        cta.addEventListener('mouseout', () => animateCard('leave'))
+
+
+
+
+    </script>
+
+</body>
+</html>

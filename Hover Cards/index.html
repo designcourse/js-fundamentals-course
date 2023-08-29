@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="btn-container">
+            <a href="#" class="cta">Imagine the difference</a>
+        </div>
+
+        <ul>
+            <li id="card1">
+                <strong>stoked</strong>
+                <p>Use stoked to amplify your design systems and add an actual level of spark.</p>
+            </li>
+            <li id="card2">
+                <strong>precision</strong>
+                <p>The precision of our components lends itself to the most accurate design system.</p>
+            </li>
+            <li id="card3">
+                <strong>static</strong>
+                <p>Not only do you own dynamic components, but static as well.</p>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const myArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+        console.log(myArr)
+        console.log(myArr[3])
+
+        myArr.forEach(item => { 
+            console.log(item)
+        })
+
+            const cards2 = [document.getElementById('card1'), document.getElementById('card2'), document.getElementById('card3')]
+
+            cards2.forEach(item => { 
+                item.style.transform = 'translateY(0)'
+            })
+
+            console.log(cards2)
+            
+            const cta = document.querySelector('.cta')
+            const cards = document.querySelectorAll('li')
+            let startTime = 0;
+            let timeOffset = 100;
+
+            console.log(cards)
+
+
+            cta.addEventListener('mouseover', () => {
+                cards2.forEach(card => {
+                    card.style.transitionDelay = startTime + 'ms';
+                    card.style.transform = 'translateY(0)'
+                    startTime += timeOffset;
+                    if (startTime >= 300)
+                        startTime = 0;
+                })
+            })
+
+            cta.addEventListener('mouseout', () => {
+                cards2.forEach(card => {
+                    card.style.transitionDelay = startTime + 'ms';
+                    card.style.transform = 'translateY(-100%)'
+                    startTime += timeOffset;
+                    if (startTime >= 300)
+                        startTime = 0;
+                })
+            })
+
+            
+
+
+
+
+/*
+        const cta = document.querySelector('.cta')
+        const cards = document.querySelectorAll('li')
+        let startTime = 50
+        let timeOffset = 100
+        
+        function cardReveal(enterOrLeave) {
+            cards.forEach(card => {
+                setTimeout(() => {
+                    if(enterOrLeave === 'enter')
+                        card.classList.add('animate')
+                    else
+                        card.classList.remove('animate')
+                }, startTime)
+                startTime += timeOffset
+                
+                if(startTime === 350)
+                    startTime = 50
+            })
+        }
+
+        cta.addEventListener('mouseenter', () => cardReveal('enter'))
+        cta.addEventListener('mouseout', () => cardReveal('leave'))
+        */
+
+
+
+
+
+    </script>
+
+</body>
+</html>

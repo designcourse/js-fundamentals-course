@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Bebas Neue", sans-serif;
+  display: grid;
+  place-content: center;
+}
+
+#cursor {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgb(255, 149, 0);
+  pointer-events: none;
+  mix-blend-mode: darken;
+}
+
+h1 {
+  font-size: 20vw;
+  color: blue;
+  pointer-events: none;
+}/*# sourceMappingURL=main.css.map */

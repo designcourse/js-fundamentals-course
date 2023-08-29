@@ -1,0 +1,44 @@
+body {
+  background: #E0E0E0;
+  padding: 0 5vw;
+  font-family: "Poppins";
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: clamp(2rem, 5vw, 7rem);
+  position: relative;
+}
+h1:before {
+  content: '"';
+  position: absolute;
+  font-size: 30rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  opacity: 0.1;
+  top: -0.3em;
+  left: -0.2em;
+  z-index: -1;
+}
+
+button {
+  display: flex;
+  gap: 1em;
+  border: none;
+  background: none;
+  align-items: center;
+  cursor: pointer;
+}
+button * {
+  flex: 1;
+}
+button span {
+  white-space: nowrap;
+  font-size: clamp(1.2rem, 1.5vw, 4rem);
+}
+button svg {
+  width: 20px;
+  transition: transform 0.3s;
+}/*# sourceMappingURL=main.css.map */

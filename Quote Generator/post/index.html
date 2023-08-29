@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>It is absolutely necessary to keep improving</h1>
+
+        <button>
+            <span>Give me another tip</span>
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.7071 8.70711C16.0976 8.31658 16.0976 7.68342 15.7071 7.29289L9.34315 0.928932C8.95262 0.538408 8.31946 0.538408 7.92893 0.928932C7.53841 1.31946 7.53841 1.95262 7.92893 2.34315L13.5858 8L7.92893 13.6569C7.53841 14.0474 7.53841 14.6805 7.92893 15.0711C8.31946 15.4616 8.95262 15.4616 9.34315 15.0711L15.7071 8.70711ZM0 9H15V7H0V9Z" fill="black"/>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+
+        console.log(document)
+
+        /* one
+        document.querySelector('h1').innerText = 'It is absolutely necessary to keep improving';
+        */
+        
+        /* two
+        const quote = 'It is absolutely necessary to keep improving'
+        console.log(quote)
+        */
+
+        /* three
+        const quote = 'It is absolutely necessary to keep improving'
+        document.querySelector('h1').innerText = quote;
+        */
+
+        /* four 
+        const quote = 'It is absolutely necessary to keep improving'
+        const title = document.querySelector('h1')
+
+        title.innerText = quote;
+        */
+
+        /* five 
+        const quote = 'Because if you do not, you will remain stagnant'
+        const title = document.querySelector('h1')
+
+        const button = document.querySelector('button')
+
+        button.addEventListener('click', () => {
+            //console.log('Hey!')
+            title.innerText = quote;
+        })
+        */
+
+        /*
+        const quote = 'It is absolutely necessary to keep improving'
+        const title = document.querySelector('h1')
+        title.innerText = quote;
+
+        const button = document.querySelector('button')
+
+        button.addEventListener('click', () => {
+            quote = 'Because if you do not, you will remain stagnant'
+            title.innerText = quote;
+        })
+        */
+
+        let quote = 'It is absolutely necessary to keep improving'
+        const title = document.querySelector('h1')
+        title.innerText = quote;
+
+        const button = document.querySelector('button')
+
+        button.addEventListener('click', changeQuote)
+
+        function changeQuote() {
+            quote = 'Because if you do not, you will remain stagnant'
+            title.innerText = quote;
+        }
+
+
+
+    </script>
+</body>
+</html>
